@@ -1,0 +1,1 @@
+kaylves-easydao是一个集成mybatis、hibernate的DAO的orm框架
