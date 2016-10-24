@@ -1,1 +1,1 @@
-kaylves-easydaoÊÇÒ»¸ö¼¯³Émybatis¡¢hibernateµÄDAOµÄorm¿ò¼Ü
+kaylves-easydaoæ˜¯ä¸€ä¸ªé›†æˆhibernateã€mybatisçš„è§£å†³æ–¹æ¡ˆæ¡†æ¶
