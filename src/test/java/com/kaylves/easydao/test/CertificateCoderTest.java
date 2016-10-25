@@ -1,15 +1,10 @@
 package com.kaylves.easydao.test;
 
-
-
 import com.kaylves.easydao.utils.security.Base64;
 import com.kaylves.easydao.utils.security.CertificateCoder;
 import com.kaylves.easydao.utils.security.CertificateHelper;
 
-
-
-
-public class Test {
+public class CertificateCoderTest {
 	private static String password = "qwer@#2012";
 	private static String alias = "js.189.cn";
 	private static String certificatePath = "d:/jszt.cer";
@@ -37,7 +32,8 @@ public class Test {
 		String inputStr = "sign";
 		byte[] data = inputStr.getBytes();
 
-		byte[] encodedData = CertificateCoder.encryptByPrivateKey(data,keyStorePath, alias, password);
+		byte[] encodedData = CertificateCoder.encryptByPrivateKey(data,
+				keyStorePath, alias, password);
 
 		byte[] decodedData = CertificateCoder.decryptByPublicKey(encodedData,
 				certificatePath);
@@ -56,15 +52,15 @@ public class Test {
 				certificatePath);
 		System.err.println("状态:\r" + status);
 	}
-	
-	public static void test2()
-	{
-		String testStr="哈哈测试下abc@#1234";
+
+	public static void test2() {
+		String testStr = "哈哈测试下abc@#1234";
 		try {
-			byte[] enc=CertificateHelper.encryptByPrivateKey(testStr.getBytes());
-			String encBase64=Base64.encode(enc);
+			byte[] enc = CertificateHelper.encryptByPrivateKey(testStr
+					.getBytes());
+			String encBase64 = Base64.encode(enc);
 			System.out.println(encBase64);
-			byte[] decBase64=Base64.decode(encBase64);
+			byte[] decBase64 = Base64.decode(encBase64);
 			byte[] decodedData = CertificateCoder.decryptByPublicKey(decBase64,
 					certificatePath);
 			System.out.println(new String(decodedData));
@@ -72,9 +68,8 @@ public class Test {
 			e.printStackTrace();
 		}
 	}
-	
-	public static void main(String[] arsg)
-	{
+
+	public static void main(String[] arsg) {
 		try {
 			test2();
 		} catch (Exception e) {
